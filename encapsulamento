@@ -1,0 +1,44 @@
+ class Pessoa:
+    def __init__(self, nome, idade):
+        self._nome = nome
+        self._idade = idade
+
+    @property
+    def nome(self):
+        return self._nome
+
+    @nome.setter
+    def nome(self, novo_nome):
+        if isinstance(novo_nome, str):
+            self._nome = novo_nome
+        else:
+            print("O nome deve ser uma string")
+
+    @property
+    def idade(self):
+        return self._idade
+
+    @idade.setter
+    def idade(self, nova_idade):
+        if isinstance(nova_idade, int):
+            self._idade = nova_idade
+        else:
+            print("A idade deve ser um número inteiro")
+
+pessoa = Pessoa("João Frango", 30)
+
+# Exibe os valores dos atributos do objeto criado
+print("Objeto Pessoa criado:")
+print("Nome:", pessoa.nome)
+print("Idade:", pessoa.idade)
+
+novo_nome = input("Digite o novo nome: ")
+nova_idade = int(input("Digite a nova idade: "))
+
+pessoa.nome = novo_nome
+pessoa.idade = nova_idade
+
+print("Objeto Pessoa após a atualização:")
+print("Nome:", pessoa.nome)
+print("Idade:", pessoa.idade)
+# Aluno: Andriê Igor 
